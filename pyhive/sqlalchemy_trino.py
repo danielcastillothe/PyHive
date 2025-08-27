@@ -5,9 +5,6 @@ https://github.com/zzzeek/sqlalchemy/blob/rel_0_5/lib/sqlalchemy/databases/sqlit
 which is released under the MIT license.
 """
 
-from __future__ import absolute_import
-from __future__ import unicode_literals
-
 import re
 from sqlalchemy import exc
 from sqlalchemy import types

@@ -3,19 +3,15 @@
 Many docstrings in this file are based on PEP-249, which is in the public domain.
 """
 
-from __future__ import absolute_import
-from __future__ import unicode_literals
 from builtins import bytes
 from builtins import int
 from builtins import object
 from builtins import str
-from past.builtins import basestring
 from pyhive import exc
 import abc
 import collections
 import time
 import datetime
-from future.utils import with_metaclass
 from itertools import islice
 
 try:
@@ -24,7 +20,7 @@ except ImportError:
     from collections import Iterable
 
 
-class DBAPICursor(with_metaclass(abc.ABCMeta, object)):
+class DBAPICursor(object, metaclass=abc.ABCMeta):
     """Base class for some common DB-API logic"""
 
     _STATE_NONE = 0
@@ -248,7 +244,7 @@ class ParamEscaper(object):
             return 'NULL'
         elif isinstance(item, (int, float)):
             return self.escape_number(item)
-        elif isinstance(item, basestring):
+        elif isinstance(item, str):
             return self.escape_string(item)
         elif isinstance(item, Iterable):
             return self.escape_sequence(item)

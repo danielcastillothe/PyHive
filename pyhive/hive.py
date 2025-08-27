@@ -5,9 +5,6 @@ See http://www.python.org/dev/peps/pep-0249/
 Many docstrings in this file are based on the PEP, which is in the public domain.
 """
 
-from __future__ import absolute_import
-from __future__ import unicode_literals
-
 import base64
 import datetime
 import re
@@ -24,7 +21,6 @@ from pyhive.common import DBAPITypeObject
 from pyhive.exc import *  # noqa
 from builtins import range
 import contextlib
-from future.utils import iteritems
 import getpass
 import logging
 import sys
@@ -587,7 +583,7 @@ for type_id in constants.PRIMITIVE_TYPES:
 
 def _unwrap_column(col, type_=None):
     """Return a list of raw values from a TColumn instance."""
-    for attr, wrapper in iteritems(col.__dict__):
+    for attr, wrapper in col.__dict__.items():
         if wrapper is not None:
             result = wrapper.values
             nulls = wrapper.nulls  # bit set describing what's null

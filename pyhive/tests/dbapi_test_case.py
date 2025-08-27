@@ -1,11 +1,7 @@
 # encoding: utf-8
 """Shared DB-API test cases"""
-
-from __future__ import absolute_import
-from __future__ import unicode_literals
 from builtins import object
 from builtins import range
-from future.utils import with_metaclass
 from pyhive import exc
 import abc
 import contextlib
@@ -25,7 +21,7 @@ def with_cursor(fn):
     return wrapped_fn
 
 
-class DBAPITestCase(with_metaclass(abc.ABCMeta, object)):
+class DBAPITestCase(object, metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def connect(self):
         raise NotImplementedError  # pragma: no cover

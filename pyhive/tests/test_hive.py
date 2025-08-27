@@ -3,10 +3,6 @@
 These rely on having a Hive+Hadoop cluster set up with HiveServer2 running.
 They also require a tables created by make_test_tables.sh.
 """
-
-from __future__ import absolute_import
-from __future__ import unicode_literals
-
 import contextlib
 import datetime
 import os

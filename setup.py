@@ -39,7 +39,6 @@ setup(
         "Topic :: Database :: Front-Ends",
     ],
     install_requires=[
-        'future',
         'python-dateutil',
     ],
     extras_require={

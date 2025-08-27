@@ -5,9 +5,6 @@ See http://www.python.org/dev/peps/pep-0249/
 Many docstrings in this file are based on the PEP, which is in the public domain.
 """
 
-from __future__ import absolute_import
-from __future__ import unicode_literals
-
 from builtins import object
 from decimal import Decimal
 
